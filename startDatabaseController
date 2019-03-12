@@ -1,0 +1,15 @@
+#!/bin/bash
+CWD="`pwd`";
+mkdir -p "/virtual/$USER/"
+touch "/virtual/$USER/database.txt"
+touch "/virtual/$USER/databaseBackup.txt"
+chmod -R 777 "/virtual/$USER/" 
+if [ "$2" = true ]
+then
+	echo "save hostname"
+	echo `hostname -I | awk '{print $1}'` >> hosts
+fi
+uname -a > out/dbcontroller$1.uname;
+nohup java DatabaseController > out/dbcontroller$1.out 2>out/dbcontroller$1.error < /dev/null &
+echo $! > out/dbcontroller$1.pid;
+

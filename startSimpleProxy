@@ -1,0 +1,4 @@
+#!/bin/bash
+uname -a > out/proxyService$1.uname;
+nohup java SimpleProxyServer > out/proxyService$1.out 2>out/proxyService$1.error < /dev/null &
+echo $! > out/proxyService$1.pid;

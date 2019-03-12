@@ -1,0 +1,15 @@
+#Get Ip
+ip route get 8.8.8.8 | awk '{print $NF; exit}'
+#Kill processes
+kill $(cat *.pid)
+kill `ps aux | grep java | awk '{print $2}'`
+
+#Put request
+curl -X PUT -v 'http://localhost:2020/?short=yy&long=http://www.yahoo.ca'
+
+
+ab -n 1000 -c 10 -g load.tsv http://localhost:2020/sid
+ab -n 1000 -c 10 -g load.tsv http://localhost:2020/PO
+ab -n 1000 -c 10 -g load.tsv http://localhost:2020/0000000000000
+ab -n 1000 -c 10 -g load.tsv http://localhost:2020/loool
+ab -n 1000 -c 10 -g load.tsv http://localhost:2020/SD

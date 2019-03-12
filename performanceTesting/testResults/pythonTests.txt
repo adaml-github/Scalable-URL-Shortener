@@ -1,0 +1,32 @@
+readTest:
+
+# of Requests:  10000
+Total Time:  85.98244285583496 s
+Time per Request:  0.008598244285583496 s
+
+
+
+writeTest:
+
+# of Requests:  10000
+Total Time:  87.46469521522522 s
+Time per Request:  0.008746469521522521 s
+
+
+
+readTestRandom:
+
+# of Requests:  10000
+Total Time:  86.48282814025879 s
+Time per Request:  0.008648282814025878 s
+
+
+
+readwriteTestAVG:
+
+# of Requests:  10000
+Total Time:  86.87825918197632 s
+Time per Request:  0.008687825918197632 s
+
+
+
